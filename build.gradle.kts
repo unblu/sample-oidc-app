@@ -18,15 +18,19 @@ repositories {
 extra["springCloudVersion"] = "Hoxton.SR1"
 
 dependencies {
+	// Boot
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+	// Cloud
+	implementation("org.springframework.cloud:spring-cloud-starter-gateway")
+	implementation("org.springframework.cloud:spring-cloud-starter-security")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-	implementation("org.springframework.cloud:spring-cloud-starter-gateway")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

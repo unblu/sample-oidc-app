@@ -1,0 +1,15 @@
+unblu:
+  backend: http://localhost:7777
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          gateway:
+            provider: google
+            client-id: TODO
+            client-secret: TODO
+            authorization-grant-type: authorization_code
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid,profile,email
