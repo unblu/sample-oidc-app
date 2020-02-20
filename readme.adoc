@@ -41,3 +41,14 @@ com.unblu.authentication.propagated.untrusted.lastName=oidc:family_name
 ----
 ./gradlew bootRun
 ----
+
+== Known Issues
+
+=== Access Tokens are not refreshed
+
+Access tokens usually expire in a matter of hours.
+The current implementation of `GatewayConfiguration` based on `TokenRelayGatewayFilterFactory`
+does not automatically refresh the tokens.
+Therefore request will start to fail as the Unblu backend rejects expired access tokens.
+
+For possible solutions see https://github.com/spring-cloud/spring-cloud-security/issues/175
