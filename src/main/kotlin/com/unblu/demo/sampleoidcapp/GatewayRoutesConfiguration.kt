@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class GatewayConfiguration(private val tokenRelay: TokenRelayGatewayFilterFactory) {
+class GatewayRoutesConfiguration(private val tokenRelay: TokenRelayGatewayFilterFactory) {
 
     @Bean
     fun routes(builder: RouteLocatorBuilder,
