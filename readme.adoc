@@ -1,4 +1,4 @@
-= OpenID Connect sample integration with Unblu
+= OpenID Connect integration sample with Unblu
 
 A sample application with OpenID Connect (OIDC) authentication propagating the identity of the user
 as an opaque access token into a site-embedded Unblu backend.
@@ -7,14 +7,14 @@ as an opaque access token into a site-embedded Unblu backend.
 
 You'll need to configure a valid OAuth 2 / OpenID Connect client.
 The template in `application-default-template.yaml` uses Google,
-but any other provider will work as well.
+but any other provider works as well.
 
 .Copy to the template into a file picked up by Spring Boot.
 ----
 cp application-default-template.yaml application-default.yaml
 ----
 
-.Configuration
+.Update the configuration and add your secret
 [source,yaml]
 ----
 include::application-default-template.yaml[]
@@ -41,6 +41,8 @@ com.unblu.authentication.propagated.untrusted.lastName=oidc:family_name
 ----
 ./gradlew bootRun
 ----
+
+Then open http://localhost:8080.
 
 == Known Issues
 

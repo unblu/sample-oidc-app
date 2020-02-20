@@ -14,6 +14,7 @@ class GatewayConfiguration(private val tokenRelay: TokenRelayGatewayFilterFactor
     @Bean
     fun routes(builder: RouteLocatorBuilder,
                @Value("\${unblu.backend}") backend: String) = builder.routes {
+
         route(id = "unblu-backend") {
             path("/unblu/**")
             filters {
