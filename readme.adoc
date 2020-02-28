@@ -28,11 +28,13 @@ enabled ID propagation based on OIDC.
 .OIDC Configuration in Unblu
 [source]
 ----
-com.unblu.authentication.oidc.userInfoEndpoint=https://openidconnect.googleapis.com/v1/userinfo
 com.unblu.authentication.untrusted.sources=PROPAGATED
 com.unblu.authentication.propagated.untrusted.userId=oidc:email
 com.unblu.authentication.propagated.untrusted.firstName=oidc:given_name
 com.unblu.authentication.propagated.untrusted.lastName=oidc:family_name
+com.unblu.authentication.oidc.userInfoEndpoint=https://openidconnect.googleapis.com/v1/userinfo
+
+com.unblu.identifier.restrictedPathPrefix=co-${systemIdentifier}
 ----
 
 == Run Sample App
